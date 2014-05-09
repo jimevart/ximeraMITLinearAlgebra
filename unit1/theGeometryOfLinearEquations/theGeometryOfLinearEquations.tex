@@ -1,41 +1,46 @@
 \documentclass{ximera}
 
-\title{Unit I: The Geometry of Linear Equations}
+\title{The Geometry of Linear Equations}
 
 \begin{document}
-
 \begin{abstract}
   Unit 1 MIT OCW Linear Algebra: The Geometry of Linear Equations
-\end{abstract}\maketitle
+\end{abstract}
+\maketitle
 
-\par
+The MIT OCW Video Lecture can be found
+here:\video{http://www.archive.org/download/MIT18.06S05_MP4/01.mp4}
 
-\noindent
-The MIT OCW Video Lecture is at the following URL:\\
-    \url{http://www.archive.org/download/MIT18.06S05_MP4/01.mp4}\\
 
-\noindent
-A major application of linear algebra is to solving systems of linear equations. This lecture presents three ways of thinking about these systems. The "row method" focuses on the individual equations, the "column method" focuses on combining the columns, and the "matrix method" is an even more compact and powerful way of describing systems of linear equations.
+A major application of linear algebra is to solving systems of linear
+equations. This lecture presents three ways of thinking about these
+systems. The ``row method'' focuses on the individual equations, the
+``column method'' focuses on combining the columns, and the ``matrix
+method'' is an even more compact and powerful way of describing
+systems of linear equations.
 
-\par
-\begin{center}
+\begin{figure}[H]
+\begin{image}
 \includegraphics{1_1.jpg}
+\end{image}
+\caption{Portion of Fig. 2.2 from the textbook \textit{Introduction to
+    Linear Algebra}.}
+\end{figure}
 
-Portion of Fig. 2.2 from the textbook Introduction to Linear Algebra.
-\end{center}
+The fundamental problem of linear algebra is to solve $n$ linear
+equations in $n$ unknowns; for example:
+\begin{align*}
+  2x-y &= 0 \\ 
+  -x+2y &= 3
+\end{align*}
 
-\noindent
-The fundamental problem of linear algebra is to solve n linear equations in n unknowns; for example:
-\begin{example}
-\[2x-y = 0\]
-\[-x+2y = 3\]
-\end{example}
-\noindent
-The system above is two dimensional (n = 2). By adding a third variable z
-we could expand it to three dimensions.
 
-\noindent
-In this first lecture on linear algebra we view this problem in three ways:
+The system above is two dimensional ($n = 2$). By adding a third
+variable $z$ we could expand it to three dimensions.
+
+
+In this first lecture on linear algebra we view this problem in three
+ways:
 
 \begin{itemize}
 \item Row Picture
@@ -43,47 +48,66 @@ In this first lecture on linear algebra we view this problem in three ways:
 \item Matrix Picture
 \end{itemize}
 
-\subsection*{Row Picture}
+\section*{Row Picture}
 
-\noindent
-Plot the points that satisfy each equation. The intersection of the plots (if they do intersect) represents the solution to the system of equations. Looking at Figure 1 we see that the solution to this system of equations is x = 1, y = 2.
 
-\begin{center}
+Plot the points that satisfy each equation. The intersection of the
+plots (if they do intersect) represents the solution to the system of
+equations. Looking at Figure~\ref{fig:intplot} we see that the
+solution to this system of equations is $x = 1$, $y = 2$.
+
+\begin{figure}[H]\label{fig:intplot}
+\begin{image}
 \includegraphics{Geometry1.png}
+\end{image}
+\caption{The lines $2x - y = 0$ and $-x + 2y = 3$ intersect at the
+  point $(1, 2)$}
+\end{figure}
 
-Figure 1: The lines 2x - y = 0 and -x + 2y = 3 intersect at the point (1, 2)
-\end{center}
+We plug this solution in to the original system of equations to check
+our work:
 
-\noindent
-We plug this solution in to the original system of equations to check our work:\\
+\begin{align*}
+2\cdot1-2 &= 0\\
+-1+2\cdot2 &= 3
+\end{align*}
 
-\[2\cdot1-2 = 0\]
-\[-1+2\cdot2 = 3\]
+The solution to a three dimensional system of equations is the common
+point of intersection of three planes (if there is one).
 
-\noindent
-The solution to a three dimensional system of equations is the common point of intersection of three planes (if there is one).
+\section*{Column Picture}
 
-\subsection*{Column Picture}
+In the column picture we rewrite the system of linear equations as a
+single equation by turning the coefficients in the columns of the
+system into vectors:
+\[
+x\verticalvector{\phantom{-} 2\\-1} + y\verticalvector{-1\\\phantom{-}
+  2} = \verticalvector{0\\3}
+\]
 
-\noindent
-In the column picture we rewrite the system of linear equations as a single equation by turning the coefficients in the columns of the system into vectors:\\
 
-\begin{example}
-\[x\verticalvector{\phantom{-} 2\\-1} + y\verticalvector{-1\\\phantom{-} 2} = \verticalvector{0\\3}\]\\
-\end{example}
+Given two vectors $\mathbf{c}$ and $\mathbf{d}$ and scalars $x$ and
+$y$, the sum $x\mathbf{c} + y\mathbf{d}$ is called a linear
+combination of $\mathbf{c}$ and $\mathbf{d}$. Linear combinations are
+important throughout this course.
 
-\noindent
-Given two vectors c and d and scalars x and y, the sum xc + yd is called a linear combination of c and d. Linear combinations are important throughout this course.
 
-\noindent
-Geometrically, we want to find numbers x and y so that x copies of vector $\verticalvector{\phantom{-}2\\-1}$ added to y copies of vector $\verticalvector{-1\\\phantom{-}2}$ equals to vector $\verticalvector{0\\3}$. As we see from Figure 2, x = 1 and y = 2, agreeing with the row picture in Figure 2
+Geometrically, we want to find numbers x and y so that x copies of
+vector $\verticalvector{\phantom{-}2\\-1}$ added to y copies of vector
+$\verticalvector{-1\\\phantom{-}2}$ equals to vector
+$\verticalvector{0\\3}$. As we see from Figure~\ref{fig:rowpict}, $x =
+1$ and $y = 2$, agreeing with the row picture in
+Figure~\ref{fig:rowpict}.
 
-\begin{center}
+\begin{figure}[H]\label{fig:rowpict}
+\begin{image}
 \includegraphics{Geometry2.png}
+\end{image}
+\caption{A linear combination of the column vectors equals the vector
+  $\mathbf{b}$.}
+\end{figure}
 
-Figure 2: A linear combination of the column vectors equals the vector b.
-
-\end{center}
+%%% stopped here
 
 \noindent
 In three dimensions, the column picture requires us to find a linear combinations of three 3-dimensional vectors that equals the vector b.
