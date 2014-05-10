@@ -1,0 +1,12 @@
+
+*.aux
+
+*.log
+
+*.pdf
+
+*.gz
+
+*.gz(busy)
+
+*.toc
