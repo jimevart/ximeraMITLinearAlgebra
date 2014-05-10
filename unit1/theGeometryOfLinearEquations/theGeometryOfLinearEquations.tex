@@ -192,14 +192,14 @@ here:\video{https://www.youtube.com/watch?v=uNKDw46_Ev4}
 
 \section*{Homework}
 \begin{question}
-1.3 problem 4 Introduction to Linear Algebra: Strang) Find a combination $x_1\mathbf{w_1} + x_2\mathbf{w_2} + x_3\mathbf{w_3}$ that gives the zero vector for the following vectors:
+1.3 problem 4 Introduction to Linear Algebra: Strang) Find a combination $x_1\mathbf{w}_1 + x_2\mathbf{w}_2 + x_3\mathbf{w}_3$ that gives the zero vector for the following vectors:
 \begin{align*}
-\mathbf{w_1} = \verticalvector{1\\2\\3} \mathbf{w_2} = \verticalvector{4\\5\\6} \mathbf{w_3} = \verticalvector{7\\8\\9}
+\mathbf{w}_1 = \verticalvector{1\\2\\3} \mathbf{w}_2 = \verticalvector{4\\5\\6} \mathbf{w}_3 = \verticalvector{7\\8\\9}
 \end{align*}
 and are the vectors independent or dependent.
 \begin{solution}
 \begin{hint}
-We might observe that $w_1 + w_3 -2w_2 = 0$, or we might simultaneously solve the system of equations.
+We might observe that $mathbf{w}_1 + mathbf{w}_3 -2mathbf{w}_2 = 0$, or we might simultaneously solve the system of equations.
 \end{hint}
 \begin{hint}
 convert from the 3 vectors to a system of equations
@@ -213,7 +213,7 @@ convert from the 3 vectors to a system of equations
 Subtracting twice equation 1 from equation 2 gives us $-3x_2 - 6x_3 = 0$. Subtracting thrice equation 1 from equation 3 gives us $-6x_2 - 12x_3 = 0$, which is equivalent to the previous equation and so leads us to suspect that the vectors are dependent. At this point we might guess $x_2 = -2$ and $x_3 = 1$ which would lead us to the answer we observed above:
 \begin{align*}
 x_1 =1, x_2 =-2, x_3 =1\\
-\mathbf{w_1}-2\mathbf{w_2}+\mathbf{w_3} =0.
+\mathbf{w}_1-2\mathbf{w}_2+\mathbf{w}_3 =0.
 \end{align*}
 Those vectors are dependent because there is a combination of the vectors
 that gives the zero vector.
@@ -221,16 +221,17 @@ that gives the zero vector.
 \begin{hint}
 The three vectors lie in a \textbf{plane}.
 \end{hint}
-What is the linear combination of the three vectors \answer{$w_1+w_3-2w_2=0$}.
+What is the linear combination of the three vectors \answer{$mathbf{w}_1+mathbf{w}_3-2mathbf{w}_2=0$}.
 Are the vectors independent or dependent?  \answer{dependent}.
-So the three vectors lie in a \answer{Plane}. The matrix W with those columns
+So the three vectors lie in a \answer{Plane}. The matrix $W$ with those columns
 is not invertible.
 \end{solution}
 \end{question}
 
 \begin{question}
 Multiply the two matrices $A \cdot \mathbf{x}$:
-\[\begin{bmatrix} 1&2&0\\2&0&3\\4&1&1 \end{bmatrix} \verticalvector{\phantom{-}3\\-2\\\phantom{-}1}\]
+where 
+\[A = \begin{bmatrix} 1&2&0\\2&0&3\\4&1&1 \end{bmatrix}\] and \[\mathbf{x} = \verticalvector{\phantom{-}3\\-2\\\phantom{-}1}\]
 
 \begin{solution}
 \begin{hint}
@@ -241,9 +242,9 @@ Multiply the two matrices $A \cdot \mathbf{x}$:
 \[A \cdot \mathbf{x} = \verticalvector{-1\\\phantom{-}9\\\phantom{-}11}\]
 \end{hint}
 
- \begin{matrixAnswer}[name=M]
+\begin{matrixAnswer}[name=M]
       The matrix is  [['-1'],['9'],['11']]
-    \end{matrixAnswer}
+ \end{matrixAnswer}
 \end{solution}
 \end{question}
 
