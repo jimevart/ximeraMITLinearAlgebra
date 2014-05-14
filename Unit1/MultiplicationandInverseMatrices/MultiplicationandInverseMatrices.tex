@@ -131,4 +131,128 @@ product of a number of elimination matrices $E_{ij}$ with the matrix $A$.
 Letting $E$ be the product of all the $E_{ij}$, we write the result of this
 Gauss-Jordan elimination using block matrices: $E[ A | I ] = [ I | E ]$.
 But if $EA = I$, then $E = A^{-1}$.
+
+\section*{Recitation}
+
+\begin{question}
+Find the conditions on $A$ and $B$ that make that matrix invertible, and find $A^{-1}$
+when it exists:
+
+\[
+\begin{bmatrix} a&b&b\\a&a&b\\a&a&a \end{bmatrix}
+\] 
+\begin{solution}
+\begin{hint}
+The matrix is not invertible if a =\answer{0}
+\end{hint}
+\begin{hint}
+$a=0$ as this would create an entire row of zeros which is always non-invertible.
+\end{hint}
+
+\begin{hint}
+The matrix is not invertible if b=\answer{a}
+\end{hint}
+\begin{hint}
+$b=a$ as this would create matrix where all the entries are identical or or all the rows
+are the same, which as we said above is always non-invertible.
+\end{hint}
+
+\begin{hint}
+You start by writing an augmented matrix that has $A$ and $I$ next to it. 
+You perform elimination steps on this augmented matrix until you've reached the 
+identity matrix on the left side. When you do that, what you have on the right 
+side will be your A inverse.
+
+\[
+[A|I] \rightarrow [I|A^{-1}]
+\]
+\end{hint}
+
+\begin{hint}
+The Augmented Matrix is 
+\begin{matrixAnswer}[name=M]
+      The matrix is  [['a','b','b', '1', '0', '0'],['a','a','b', '0', '1', '0'],
+      ['a','a','a', '0', '0', '1']]
+\end{matrixAnswer}
+\end{hint}
+
+\begin{hint}
+\[
+A^{-1} = \frac {1}{a-b} \begin{bmatrix} \phantom{-}1&\phantom{-}0&-\frac{b}{a}\\-1&
+\phantom{-}1&\phantom{-}0\\\phantom{-}0&-1&\phantom{-}1 \end{bmatrix}
+\]
+\end{hint}
+
+\begin{matrixAnswer}[name=M]
+      The matrix is  \frac {1}{a-b}[['1','0','-\frac{b}{a}'],['-1','1','0'],['0','-1','1']]
+\end{matrixAnswer}
+
+\end{solution}
+\end{question}
+
+The MIT Recitation video for this question is here:
+here:\video{https://www.youtube.com/watch?v=xCIXkm3-ocQ}
+
+\section*{Homework}
+
+\begin{question}
+
+Add Matrices $AB$ to $AC$ and compare with $A(B + C)$
+
+\[
+A= \begin{bmatrix}1&2\\3&4\end{bmatrix} B= \begin{bmatrix}1&0\\0&0\end{bmatrix}
+C= \begin{bmatrix}0&0\\5&6\end{bmatrix}
+\]
+
+\begin{solution}
+
+\begin{matrixAnswer}[name=M]
+      AB = [['1','0'],['3','0']]      
+\end{matrixAnswer}
+\begin{matrixAnswer}[name=M]
+      AC = [['10','12'],['20','24']]      
+\end{matrixAnswer}
+\begin{matrixAnswer}[name=M]
+      AB + AC = [['11','12'],['23','24']]
+\end{matrixAnswer}
+
+Now Do $A(B+C)$
+\begin{matrixAnswer}[name=M]
+      B + C = [['1','0'],['5','6']]
+\end{matrixAnswer}
+\begin{matrixAnswer}[name=M]
+      A(B + C) = [['11','12'],['23','24']]
+\end{matrixAnswer}
+
+Therefore, $AB + AC = A(B + C)$
+
+\end{solution}
+\end{question}
+
+\begin{question}
+(2.5 24. Introduction to Linear Algebra: Strang) Use Gauss-
+Jordan elimination on $[U I]$ to find the upper triangular $U^{-1}$
+
+\[
+U = \begin{bmatrix}1&a&b\\0&1&c\\0&0&1\end{bmatrix}
+\]
+
+\begin{solution}
+
+\begin{hint}
+\[
+%%The Augmented Matrix is $\begin{bmatrix}1&a&b&1&0&0\\0&1&c&0&1&0\\0&0&1$0&0&1\end{bmatrix}$
+\]
+\end{hint}
+\[
+The result is:
+\begin{matrixAnswer}[name=M]
+      [['1','0', '0', '1', '-a', 'ac-b'],['0','1', '0', '0', '1', '-c'],
+       ['0', '0', '1', '0', '0', '1']]
+\end{matrixAnswer}
+
+\]
+\end{solution}
+\end{question}
+
 \end{document}
