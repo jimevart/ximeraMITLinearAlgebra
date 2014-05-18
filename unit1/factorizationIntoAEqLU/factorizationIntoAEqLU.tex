@@ -161,14 +161,31 @@ permutation matrices. These matrices form a multiplicative group.
 \section*{Recitation}
 
 \begin{question}
+
+Find that LU decomposition of this matrix A.
+\[
+A =  \begin{bmatrix}  1&0&1\\a&a&a\\b&b&a \end{bmatrix}
+\]
+when it exists.  For which real numbers $a$ and $b$ does it exist?
+
 \begin{solution}
 \begin{hint}
+Watch the MIT Recitation Video
 \end{hint}
+\begin{matrixAnswer}[name=U]
+      U = [['1', '0', '1'], ['0','a', '0'], ['0', '0', 'a-b']]
+\end{matrixAnswer}
+
+\begin{matrixAnswer}[name=L]
+      L = [['1', '0', '0'], ['a','1', '0'], ['b', 'b/2', 1']]
+\end{matrixAnswer}
+
+The decomposition exists when $a \ne \answer{0}$
 \end{solution}
 \end{question}
 
 The MIT Recitation video for this question is here:
-here:\video{https://www.youtube.com/watch?v=xCIXkm3-ocQ}
+here:\video{https://www.youtube.com/watch?v=rhNKncraJMk}
 
 \section*{Homework}
 
